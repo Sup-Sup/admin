@@ -21,11 +21,13 @@ module.exports = async function (params = {}) {
   this.middleware.validate(params, schema)
 
   const { decryptData: isDecryptData = true } = params
-
+  console.log('-- 中间件 --- 校验后 ---' , params);
   const {
     uid
   } = this.authInfo
+   console.log('-- 拿到id没有 --- uid ---' , uid);
   const getUserRes = await userCollection.doc(uid).get()
+  console.log('-- 获取数据 -- getUserRes ---' , getUserRes);
   const userRecord = getUserRes && getUserRes.data && getUserRes.data[0]
   if (!userRecord) {
     throw {

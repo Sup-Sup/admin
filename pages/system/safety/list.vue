@@ -22,7 +22,7 @@
 						<uni-th align="center">时间</uni-th>
 					</uni-tr>
 					<uni-tr v-for="(item,index) in data" :key="index">
-						<uni-td align="center">{{(pagination.current -1)*pagination.size + (index+1)}}</uni-td>
+						<uni-td align="center"> {{pagination}} ---  {{(pagination.current -1)*pagination.size + (index+1)}}</uni-td>
 						<uni-td align="center">{{item.user_id[0] && item.user_id[0].username || '-'}}</uni-td>
 						<uni-td align="center">{{item.user_id[0] && item.user_id[0].nickname || '-'}}</uni-td>
 						<uni-td align="center">{{item.type}}</uni-td>

@@ -8,6 +8,7 @@ module.exports = async function () {
     throw payload
   }
   this.authInfo = payload
+  console.log('--- authInfo 信息 --- ', payload );
   if (payload.token) {
     this.response.newToken = {
       token: payload.token,
